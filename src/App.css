@@ -67,3 +67,39 @@
 .game .info .actions-taken {
   margin-right: 20px;
 }
+
+.Header{
+  color:rgb(24, 91, 93);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font: size 350px;;
+  font-weight:bold;
+}
+
+.player-list{
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
+.PlayerList{
+  text-align: center;
+}
+
+.active-player{
+  margin-right: 10%;
+  margin-left: 40%;
+  margin-bottom: 10%;
+}
+
+.score{
+  margin-top: 10%;
+  font-size: larger;
+
+}
+
+.actions{
+  margin-right: 10%;
+  margin-left: 40%;
+  margin-bottom: 20%;
+  margin-top: 0%;
+  color: chartreuse;
+}

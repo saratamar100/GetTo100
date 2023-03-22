@@ -10,7 +10,7 @@ class PlayerList extends Component {
 
     return (
       <div className="player-list">
-        <h2>Player List</h2>
+        <h2 className="PlayerList">Player List</h2>
         <ul>
           {players.map((player, index) => (
             <Player
