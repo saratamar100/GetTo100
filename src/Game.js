@@ -56,7 +56,7 @@ class Game extends Component {
 
     return (
       <div className="game">
-        <h2>Get to 100</h2>
+        <h1  className="Header">Get to 100</h1>
         <div className="score">{this.props.score}</div>
         <div className="actions">
           <button onClick={() => this.handleAction("+1")}>+1</button>
