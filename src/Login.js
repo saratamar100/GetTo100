@@ -106,6 +106,7 @@ class Login extends Component {
             ))}
           </ul>
         </div>
+        <button onClick={()=>alert("clicked")}>hi</button>
       </div>
     );
   }
