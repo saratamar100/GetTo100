@@ -7,7 +7,7 @@ import Signup from "./Signup";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { page: "login", history: [] };
+    this.state = { page: "signup", history: [] };
   }
   render() {
     if (this.state.page === "login") {

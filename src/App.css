@@ -71,8 +71,8 @@
 .Header{
   color:rgb(24, 91, 93);
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font: size 350px;;
-  font-weight:bold;
+  font-size: 60px;
+  font-weight:bolder;
 }
 
 .player-list{
@@ -87,19 +87,57 @@
 .active-player{
   margin-right: 10%;
   margin-left: 40%;
-  margin-bottom: 10%;
+  margin-bottom: 20%;
 }
 
 .score{
-  margin-top: 10%;
-  font-size: larger;
+  margin-top: 20%;
+  font-size: 1000px;
+  size: 500px;
+  size-adjust: 500px;
 
 }
 
 .actions{
-  margin-right: 10%;
+  margin-right: 38%;
   margin-left: 40%;
   margin-bottom: 20%;
-  margin-top: 0%;
-  color: chartreuse;
+  size: 500px;
+}
+
+.class_username{
+  text-align: center;
+}
+
+.class_password{
+  text-align: center;
+}
+
+.class_confirmPassword{
+  text-align: center;
+}
+
+.SignUp{
+  width: 50%;
+  margin: 50px auto;
+  height: auto;
+  text-align: center;
+  line-height: 10px;
+  font-size: 50px;
+  color: rgb(52, 92, 92);
+}
+
+.button{
+  background-color: rgb(52, 92, 92);
+  color: white;
+  padding: 10px 80px;
+  border: none;
+  opacity: 0.8;
+  border: 1px #b7e6e6 solid;
+  text-align: center;
+}
+
+.button:hover{
+  background-color: #9de031;
+  
 }
