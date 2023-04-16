@@ -65,9 +65,10 @@ class Signup extends Component {
 
     return (
       <div>
-        <h1>Sign Up</h1>
+        <h1 className="SignUp">Sign Up</h1>
         <form onSubmit={this.handleSignup}>
-          <div>
+          <div className="flex">
+          <div className="class_username">
             <label htmlFor="username">Username</label>
             <input
               type="text"
@@ -77,7 +78,7 @@ class Signup extends Component {
               onChange={this.handleInputChange}
             />
           </div>
-          <div>
+          <div className="class_password">
             <label htmlFor="password">Password</label>
             <input
               type="password"
@@ -87,7 +88,7 @@ class Signup extends Component {
               onChange={this.handleInputChange}
             />
           </div>
-          <div>
+          <div className="class_confirmPassword">
             <label htmlFor="confirmPassword">Confirm Password</label>
             <input
               type="password"
@@ -96,7 +97,8 @@ class Signup extends Component {
               value={confirmPassword}
               onChange={this.handleInputChange}
             />
-          </div>
+          </div >
+          </div >
           <button type="submit">Sign Up</button>
           <div>{error}</div>
         </form>
