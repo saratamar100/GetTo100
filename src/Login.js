@@ -37,6 +37,7 @@ class Login extends Component {
         this.setState({
           loggedInUsers: [...loggedInUsers, username],
         });
+        this.props.addUser(username);
       }
 
       this.setState({
@@ -106,7 +107,9 @@ class Login extends Component {
             ))}
           </ul>
         </div>
-        <button onClick={()=>alert("clicked")}>hi</button>
+        <div>
+          <button onClick={this.props.login}>enter</button>
+        </div>
       </div>
     );
   }

@@ -7,16 +7,18 @@ class GetTo100 extends Component {
     super(props);
 
     this.state = {
-      players: [
-        { name: "Player 1", gamesPlayed: 0, bestScore: null, score: 5 },
-        { name: "Player 2", gamesPlayed: 0, bestScore: null, score: 7 },
-        { name: "Player 3", gamesPlayed: 0, bestScore: null, score: 9 },
-      ],
+      players: this.props.users.map((user) => ({
+        name: user,
+        gamesPlayed: 0,
+        bestScore: null,
+        score: 5,
+      })),
       activePlayerIndex: 0,
     };
   }
 
-  handleGameCompletion = (playerIndex) => {//Father Function
+  handleGameCompletion = (playerIndex) => {
+    //Father Function
     const { players, activePlayerIndex } = this.state;
     const player = players[playerIndex];
     //player.gamesPlayed += 1;
