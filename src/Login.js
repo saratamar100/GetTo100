@@ -8,12 +8,12 @@ class Login extends Component {
     this.state = {
       username: "",
       password: "",
-      loggedInUsers: [],
+      //loggedInUsers: [],
       users: [
-        { username: "user1", password: "password1" },
-        { username: "user2", password: "password2" },
-        { username: "user3", password: "password3" },
-        { username: "user4", password: "password4" },
+        { username: "user1", password: "1" },
+        { username: "user2", password: "2" },
+        { username: "user3", password: "3" },
+        { username: "user4", password: "4" },
       ],
       error: "",
     };
@@ -31,15 +31,13 @@ class Login extends Component {
   handleLogin = (event) => {
     event.preventDefault();
 
-    const { username, password, users, loggedInUsers } = this.state;
+    const { username, password, users } = this.state;
+    const {loggedInUsers} = this.props;
     const user = users.find((user) => user.username === username);
 
     if (user && user.password === password) {
       if (loggedInUsers.indexOf(username) === -1) {
-        this.setState({
-          loggedInUsers: [...loggedInUsers, username],
-        });
-        this.props.changeUsers(loggedInUsers);
+        this.props.changeUsers([...loggedInUsers,username]);
       }
 
       this.setState({
@@ -54,21 +52,18 @@ class Login extends Component {
   };
 
   handleLogout = (username) => {
-    const { loggedInUsers } = this.state;
+    const { loggedInUsers } = this.props;
     const index = loggedInUsers.indexOf(username);
 
     if (index !== -1) {
       loggedInUsers.splice(index, 1);
-
-      this.setState({
-        loggedInUsers: [...loggedInUsers],
-      });
-      this.props.changeUsers(loggedInUsers);
+      this.props.changeUsers([...loggedInUsers]);
     }
   };
 
   render() {
-    const { username, password, loggedInUsers, error } = this.state;
+    const { username, password, error } = this.state;
+    const {loggedInUsers} = this.props;
 
     return (
       <div className="class_login">
