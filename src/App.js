@@ -7,15 +7,24 @@ import Signup from "./Signup";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { page: "login", history: [] };
+    this.state = { page: "login", history: [], users:[] };
   }
+
+  handleLogin = () => {
+    this.setState({
+      page: "game",
+    });
+  };
+  handleChangeUsers = (users) => {
+    this.setState({users});
+  };
   render() {
     if (this.state.page === "login") {
-      return <Login />;
+      return <Login login={this.handleLogin} changeUsers={this.handleChangeUsers} />;
     } else if (this.state.page === "signup") {
       return <Signup />;
     } else if (this.state.page === "game") {
-      return <GetTo100 />;
+      return <GetTo100 users={this.state.users}/>;
     }
     return null;
   }

@@ -13,6 +13,7 @@ class Login extends Component {
         { username: "user1", password: "password1" },
         { username: "user2", password: "password2" },
         { username: "user3", password: "password3" },
+        { username: "user4", password: "password4" },
       ],
       error: "",
     };
@@ -38,6 +39,7 @@ class Login extends Component {
         this.setState({
           loggedInUsers: [...loggedInUsers, username],
         });
+        this.props.changeUsers(loggedInUsers);
       }
 
       this.setState({
@@ -61,6 +63,7 @@ class Login extends Component {
       this.setState({
         loggedInUsers: [...loggedInUsers],
       });
+      this.props.changeUsers(loggedInUsers);
     }
   };
 
