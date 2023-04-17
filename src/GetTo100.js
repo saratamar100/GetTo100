@@ -11,7 +11,7 @@ class GetTo100 extends Component {
         name: user,
         gamesPlayed: 0,
         bestScore: null,
-        score: 5,
+        score: Math.floor(Math.random() * 99) + 1,
       })),
       activePlayerIndex: 0,
     };

@@ -15,12 +15,12 @@ class App extends Component {
       page: "game",
     });
   };
-  handleAddUser = (newUser) => {
-    this.setState((oldState) => ({ users:[...oldState.users ,newUser]}));
+  handleChangeUsers = (users) => {
+    this.setState({users});
   };
   render() {
     if (this.state.page === "login") {
-      return <Login login={this.handleLogin} addUser={this.handleAddUser} />;
+      return <Login login={this.handleLogin} changeUsers={this.handleChangeUsers} />;
     } else if (this.state.page === "signup") {
       return <Signup />;
     } else if (this.state.page === "game") {
