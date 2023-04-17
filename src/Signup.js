@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./SignUp.css";
+import CartIcon from '../src/media/kubiya.jpg';
 
 class Signup extends Component {
   constructor(props) {
@@ -67,6 +68,8 @@ class Signup extends Component {
     return (
       <div className="class_SignUp"> 
         <h1 className="Header">Sign Up</h1>
+        <img className="kubiyaR" src={CartIcon}/>
+        <img className="kubiyaL" src={CartIcon}/>
         <form onSubmit={this.handleSignup}>
           <div className="flex">
           <div className="class_username">
