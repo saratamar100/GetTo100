@@ -71,48 +71,50 @@ class Login extends Component {
     const { username, password, loggedInUsers, error } = this.state;
 
     return (
-      <div>
-        <div className="class_login">
-         <h1 className="Header">Login</h1>
-         <form onSubmit={this.handleLogin}>
-           <div>
-             <label htmlFor="username">Username</label>
-             <input
-               type="text"
-               id="username"
-               name="username"
-               value={username}
-               onChange={this.handleInputChange}
-             />
-           </div>
-           <div>
-             <label htmlFor="password">Password</label>
-             <input
-               type="password"
-               id="password"
-               name="password"
-               value={password}
-               onChange={this.handleInputChange}
-             />
-           </div>
-           <button type="submit">Login</button>
-           <div>{error}</div>
-         </form>
-         <div>
-           <h2>Logged in users:</h2>
-           <ul>
-             {loggedInUsers.map((username) => (
-               <li key={username}>
-                 {username}
-                 <button onClick={() => this.handleLogout(username)}>
-                   Logout
-                 </button>
-               </li>
-             ))}
-           </ul>
-         </div>
-         <button onClick={()=>alert("clicked")}>hi</button>
-       </div>
+      <div className="class_login">
+        <h1>Login</h1>
+        <div className="flex_continer">
+          <form className="form_login" onSubmit={this.handleLogin}>
+            <div>
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={username}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={password}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <button type="submit">Login</button>
+            <div>{error}</div>
+          </form>
+          <div className="Logged_in_users">
+            <h2>Logged in users:</h2>
+            <ul>
+              {loggedInUsers.map((username) => (
+                <li key={username}>
+                  {username}
+                  <button onClick={() => this.handleLogout(username)}>
+                    Logout
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <div>
+              <button onClick={this.props.login}>enter</button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
