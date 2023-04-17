@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./SignUp.css";
 
 class Signup extends Component {
   constructor(props) {
@@ -64,8 +65,8 @@ class Signup extends Component {
     const { username, password, confirmPassword, error } = this.state;
 
     return (
-      <div>
-        <h1 className="SignUp">Sign Up</h1>
+      <div className="class_SignUp"> 
+        <h1 className="Header">Sign Up</h1>
         <form onSubmit={this.handleSignup}>
           <div className="flex">
           <div className="class_username">
@@ -99,7 +100,7 @@ class Signup extends Component {
             />
           </div >
           </div >
-          <button type="submit">Sign Up</button>
+          <button className="submit" type="submit">Sign Up</button>
           <div>{error}</div>
         </form>
       </div>

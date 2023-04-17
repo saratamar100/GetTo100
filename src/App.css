@@ -105,38 +105,6 @@
   size: 500px;
 }
 
-.class_username{
-  text-align: center;
-}
-
-.class_password{
-  text-align: center;
-}
-
-.class_confirmPassword{
-  text-align: center;
-}
-
-.SignUp{
-  width: 50%;
-  margin: 50px auto;
-  height: auto;
-  text-align: center;
-  line-height: 10px;
-  font-size: 50px;
-  color: rgb(52, 92, 92);
-}
-
-.button{
-  background-color: rgb(52, 92, 92);
-  color: white;
-  padding: 10px 80px;
-  border: none;
-  opacity: 0.8;
-  border: 1px #b7e6e6 solid;
-  text-align: center;
-}
-
 .button:hover{
   background-color: #9de031;
   
