@@ -65,43 +65,44 @@ class Signup extends Component {
     const { username, password, confirmPassword, error } = this.state;
 
     return (
-      <div className="class_SignUp"> 
+      <div className="class_SignUp">
         <h1 className="Header">Sign Up</h1>
         <form onSubmit={this.handleSignup}>
           <div className="flex">
-          <div className="class_username">
-            <label htmlFor="username">Username</label>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              value={username}
-              onChange={this.handleInputChange}
-            />
+            <div className="class_username">
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={username}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <div className="class_password">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={password}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <div className="class_confirmPassword">
+              <label htmlFor="confirmPassword">Confirm Password</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                value={confirmPassword}
+                onChange={this.handleInputChange}
+              />
+            </div>
           </div>
-          <div className="class_password">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={password}
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <div className="class_confirmPassword">
-            <label htmlFor="confirmPassword">Confirm Password</label>
-            <input
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              value={confirmPassword}
-              onChange={this.handleInputChange}
-            />
-          </div >
-          </div >
           <button className="submit" type="submit">Sign Up</button>
           <div>{error}</div>
+          <button onClick={this.props.login}>Log In</button>
         </form>
       </div>
     );
