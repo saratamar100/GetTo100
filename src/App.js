@@ -7,12 +7,12 @@ import Signup from "./Signup";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { page: "login", history: [], loggedInUsers: [] };
+    this.state = { page: "signup", history: [], loggedInUsers: [] };
   }
 
-  handleLogin = () => {
+  handleChangePage = (page) => {
     this.setState({
-      page: "game",
+      page,
     });
   };
   handleChangeUsers = (loggedInUsers) => {
@@ -22,13 +22,13 @@ class App extends Component {
     if (this.state.page === "login") {
       return (
         <Login
-          login={this.handleLogin}
+          login={() => this.handleChangePage("game")}
           changeUsers={this.handleChangeUsers}
           loggedInUsers={this.state.loggedInUsers}
         />
       );
     } else if (this.state.page === "signup") {
-      return <Signup />;
+      return <Signup login={() => this.handleChangePage("login")} />;
     } else if (this.state.page === "game") {
       return <GetTo100 users={this.state.loggedInUsers} />;
     }
