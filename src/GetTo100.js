@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Game from "./Game";
 import PlayerList from "./PlayerList";
+import "./GetTo100.css";
 
 class GetTo100 extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class GetTo100 extends Component {
     //player.gamesPlayed += 1;
     // if (!player.bestScore || score < player.bestScore) {
     //   player.bestScore = score;
-    // }
+    // }3
     this.setActivePlayerIndex();
 
     this.setState({ players });
@@ -41,15 +42,19 @@ class GetTo100 extends Component {
     const { players, activePlayerIndex } = this.state;
 
     return (
-      <div className="app">
-        <PlayerList players={players} />
-        <Game
-          players={players}
-          activePlayerIndex={activePlayerIndex}
-          onGameCompletion={this.handleGameCompletion}
-          setActivePlayerIndex={this.setActivePlayerIndex}
-          score={this.state.players[this.state.activePlayerIndex].score}
-        />
+      <div className="get_to100">
+        <h1 className="Header">Get to 100</h1>
+        <div className="flex_continer" >
+
+          <PlayerList players={players} />
+          <Game
+            players={players}
+            activePlayerIndex={activePlayerIndex}
+            onGameCompletion={this.handleGameCompletion}
+            setActivePlayerIndex={this.setActivePlayerIndex}
+            score={this.state.players[this.state.activePlayerIndex].score}
+          />
+        </div>
       </div>
     );
   }

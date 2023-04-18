@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import CartIcon from '../src/media/kubiya.jpg';
+
 
 class Game extends Component {
   handleGameCompletion = () => {
@@ -56,7 +58,8 @@ class Game extends Component {
 
     return (
       <div className="game">
-        <h1  className="Header">Get to 100</h1>
+        <img className="kubiyaR" src={CartIcon}/>
+        <img className="kubiyaL" src={CartIcon}/>
         <div className="score">{this.props.score}</div>
         <div className="actions">
           <button onClick={() => this.handleAction("+1")}>+1</button>

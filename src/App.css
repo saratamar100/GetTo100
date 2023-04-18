@@ -1,4 +1,4 @@
-.app {
+/*.app {
   display: flex;
   flex-direction: row;
 }
@@ -22,90 +22,4 @@
 
 .player-list li span {
   flex: 1;
-}
-
-.game {
-  flex: 2;
-}
-
-.game h2 {
-  margin-top: 0;
-}
-
-.game .score {
-  font-size: 48px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.game .actions {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.game .actions button {
-  margin-right: 10px;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.game .info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  font-size: 18px;
-}
-
-.game .info .active-player {
-  font-weight: bold;
-}
-
-.game .info .actions-taken {
-  margin-right: 20px;
-}
-
-/* .Header{
-  color:rgb(24, 91, 93);
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 60px;
-  font-weight:bolder;
 } */
-
-.player-list{
-  margin-left: 10%;
-  margin-top: 10%;
-}
-
-.PlayerList{
-  text-align: center;
-}
-
-.active-player{
-  margin-right: 10%;
-  margin-left: 40%;
-  margin-bottom: 20%;
-}
-
-.score{
-  margin-top: 20%;
-  font-size: 1000px;
-  size: 500px;
-  size-adjust: 500px;
-
-}
-
-.actions{
-  margin-right: 38%;
-  margin-left: 40%;
-  margin-bottom: 20%;
-  size: 500px;
-}
-
-.button:hover{
-  background-color: #9de031;
-  
-}

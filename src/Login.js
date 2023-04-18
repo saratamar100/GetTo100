@@ -69,8 +69,8 @@ class Login extends Component {
     return (
       <div className="class_login">
         <h1 className="Header">Login</h1>
-        <img className="kubiyaR" src={CartIcon}/>
-        <img className="kubiyaL" src={CartIcon}/>
+        <img className="kubiyaR" src={CartIcon} />
+        <img className="kubiyaL" src={CartIcon} />
         <div className="flex_continer">
           <form className="form_login" onSubmit={this.handleLogin}>
             <div>
@@ -108,10 +108,10 @@ class Login extends Component {
                 </li>
               ))}
             </ul>
-            <div>
-              <button onClick={this.props.login}>enter</button>
-            </div>
           </div>
+        </div>
+        <div>
+          <button onClick={this.props.login}>enter</button>
         </div>
       </div>
     );
