@@ -67,7 +67,7 @@ class Game extends Component {
           <button onClick={() => this.handleAction("*2")}>*2</button>
           <button onClick={() => this.handleAction("/2")}>/2</button>
         </div>
-        <div className="info">
+        <div className="info" >
           <div className="active-player">{activePlayer.name}'s turn</div>
         </div>
       </div>
