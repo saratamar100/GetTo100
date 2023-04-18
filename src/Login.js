@@ -1,21 +1,22 @@
 import React, { Component } from "react";
-import "./Login.css"
-import CartIcon from '../src/media/kubiya.jpg';
+import "./Login.css";
+import CartIcon from "../src/media/kubiya.jpg";
 
 class Login extends Component {
   constructor(props) {
     super(props);
-
+    let users = [];
+    let usersJson = localStorage.getItem("users100");
+    if (usersJson) {
+      users = JSON.parse(usersJson);
+    } else {
+      localStorage.setItem("users100", JSON.stringify([]));
+    }
     this.state = {
       username: "",
       password: "",
       //loggedInUsers: [],
-      users: [
-        { username: "user1", password: "1" },
-        { username: "user2", password: "2" },
-        { username: "user3", password: "3" },
-        { username: "user4", password: "4" },
-      ],
+      users,
       error: "",
     };
   }
@@ -33,12 +34,12 @@ class Login extends Component {
     event.preventDefault();
 
     const { username, password, users } = this.state;
-    const {loggedInUsers} = this.props;
+    const { loggedInUsers } = this.props;
     const user = users.find((user) => user.username === username);
 
     if (user && user.password === password) {
       if (loggedInUsers.indexOf(username) === -1) {
-        this.props.changeUsers([...loggedInUsers,username]);
+        this.props.changeUsers([...loggedInUsers, username]);
       }
 
       this.setState({
@@ -64,7 +65,7 @@ class Login extends Component {
 
   render() {
     const { username, password, error } = this.state;
-    const {loggedInUsers} = this.props;
+    const { loggedInUsers } = this.props;
 
     return (
       <div className="class_login">
@@ -112,6 +113,9 @@ class Login extends Component {
         </div>
         <div>
           <button onClick={this.props.login}>enter</button>
+        </div>
+        <div>
+          <button onClick={this.props.signup}>sign up</button>
         </div>
       </div>
     );

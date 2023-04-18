@@ -25,6 +25,7 @@ class App extends Component {
           login={() => this.handleChangePage("game")}
           changeUsers={this.handleChangeUsers}
           loggedInUsers={this.state.loggedInUsers}
+          signup={() => this.handleChangePage("signup")}
         />
       );
     } else if (this.state.page === "signup") {
