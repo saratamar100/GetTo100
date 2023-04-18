@@ -63,6 +63,15 @@ class Login extends Component {
     }
   };
 
+  handleLoginAll = () => {
+    const num = this.props.loggedInUsers.length;
+    if (num < 2 || num > 4) {
+      alert("erorrrrrrrrrrr");
+    } else {
+      this.props.login();
+    }
+  };
+
   render() {
     const { username, password, error } = this.state;
     const { loggedInUsers } = this.props;
@@ -112,7 +121,7 @@ class Login extends Component {
           </div>
         </div>
         <div>
-          <button onClick={this.props.login}>enter</button>
+          <button onClick={this.handleLoginAll}>enter</button>
         </div>
         <div>
           <button onClick={this.props.signup}>sign up</button>

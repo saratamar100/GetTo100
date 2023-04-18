@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Player from "./Player";
 class PlayerList extends Component {
-//   handleLeaveSystem = (playerIndex) => {
-//     this.props.onLeaveSystem(playerIndex);
-//   };
+  //   handleLeaveSystem = (playerIndex) => {
+  //     this.props.onLeaveSystem(playerIndex);
+  //   };
 
   render() {
     const { players } = this.props;
@@ -19,7 +19,8 @@ class PlayerList extends Component {
               gamesPlayed={player.gamesPlayed}
               bestScore={player.bestScore}
               score={player.score}
-            //   onLeaveSystem={() => this.handleLeaveSystem(index)}
+              active={index == this.props.activePlayerIndex}
+              //   onLeaveSystem={() => this.handleLeaveSystem(index)}
             />
           ))}
         </ul>

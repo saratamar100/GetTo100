@@ -5,10 +5,10 @@ class Player extends Component {
   //   };
 
   render() {
-    const { name, gamesPlayed, bestScore, score } = this.props;
+    const { name, gamesPlayed, bestScore, score, active } = this.props;
 
     return (
-      <li>
+      <li style={{ backgroundColor: "yellow" }}>
         <span>
           {name} - Games Played: {gamesPlayed} - Best Score: {bestScore}
         </span>

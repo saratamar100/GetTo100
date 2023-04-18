@@ -44,9 +44,11 @@ class GetTo100 extends Component {
     return (
       <div className="get_to100">
         <h1 className="Header">Get to 100</h1>
-        <div className="flex_continer" >
-
-          <PlayerList players={players} />
+        <div className="flex_continer">
+          <PlayerList
+            players={players}
+            activePlayerIndex={this.state.activePlayerIndex}
+          />
           <Game
             players={players}
             activePlayerIndex={activePlayerIndex}
