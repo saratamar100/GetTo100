@@ -5,7 +5,7 @@ class Player extends Component {
   //   };
 
   render() {
-    const { name, gamesPlayed, bestScore, score, active } = this.props;
+    const { name, score, active } = this.props;
     let style = {};
     if (active) {
       style = { backgroundColor: "yellow" };
@@ -13,9 +13,9 @@ class Player extends Component {
     return (
       <li style={style}>
         <span>
-          {name} - Games Played: {gamesPlayed} - Best Score: {bestScore}
+          {name} -j
         </span>
-        <h5>{score}</h5>
+        <h5 style={{display:"inline"}}>{score}</h5>
       </li>
     );
   }

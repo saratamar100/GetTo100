@@ -14,10 +14,8 @@ class PlayerList extends Component {
         <ul>
           {players.map((player, index) => (
             <Player
-              key={index}
+              key={player.name}
               name={player.name}
-              gamesPlayed={player.gamesPlayed}
-              bestScore={player.bestScore}
               score={player.score}
               active={index == this.props.activePlayerIndex}
               //   onLeaveSystem={() => this.handleLeaveSystem(index)}

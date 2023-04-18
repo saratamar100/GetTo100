@@ -10,8 +10,6 @@ class GetTo100 extends Component {
     this.state = {
       players: this.props.users.map((user) => ({
         name: user,
-        gamesPlayed: 0,
-        bestScore: null,
         score: Math.floor(Math.random() * 99) + 1,
       })),
       activePlayerIndex: 0,
@@ -46,6 +44,23 @@ class GetTo100 extends Component {
     // }));
   };
 
+  handleWinnig = (winner) => {
+    let users = [];
+    let usersJson = localStorage.getItem("users100");
+    if (usersJson) {
+      users = JSON.parse(usersJson);
+    } else {
+      localStorage.setItem("users100", JSON.stringify([]));
+    }
+    console.log(users);
+    const userIndex = users.findIndex((user) => user.username === winner);
+
+    if (userIndex > -1) {
+      users[userIndex].games.push(this.state.steps);
+    }
+    localStorage.setItem("users100", JSON.stringify(users));
+  };
+
   render() {
     const { players, activePlayerIndex } = this.state;
 
@@ -64,6 +79,7 @@ class GetTo100 extends Component {
             setActivePlayerIndex={this.setActivePlayerIndex}
             score={this.state.players[this.state.activePlayerIndex].score}
             steps={this.state.steps}
+            winnig={this.handleWinnig}
           />
         </div>
       </div>
