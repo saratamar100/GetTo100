@@ -54,6 +54,7 @@ class Signup extends Component {
     const newUser = {
       username: username,
       password: password,
+      games: [],
     };
 
     this.setState(

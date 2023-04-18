@@ -14,7 +14,7 @@ class Game extends Component {
     // });
     //this.props.setActivePlayerIndex(nextActivePlayerIndex);
 
-    alert(players[activePlayerIndex].name + " won!!!!:)");
+    alert(players[activePlayerIndex].name + " won!!!!:)"+" with "+this.props.steps);
   };
 
   handleAction = (action) => {
@@ -70,6 +70,7 @@ class Game extends Component {
         <div className="info" >
           <div className="active-player">{activePlayer.name}'s turn</div>
         </div>
+        <p>{this.props.steps} steps</p>
       </div>
     );
   }

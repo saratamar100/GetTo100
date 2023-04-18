@@ -15,6 +15,7 @@ class GetTo100 extends Component {
         score: Math.floor(Math.random() * 99) + 1,
       })),
       activePlayerIndex: 0,
+      steps: 1,
     };
   }
 
@@ -35,7 +36,14 @@ class GetTo100 extends Component {
     const { players, activePlayerIndex } = this.state;
     players[activePlayerIndex].score = newScore;
     const nextActivePlayerIndex = (activePlayerIndex + 1) % players.length;
+    if (nextActivePlayerIndex === 0) {
+      this.setState((oldState) => ({ steps: oldState.steps + 1 })); ////////////
+    }
     this.setState({ activePlayerIndex: nextActivePlayerIndex, players }); ///////////////event!!
+    // this.setState((oldState) => ({
+    //   activePlayerIndex: (oldState.activePlayerIndex + 1) % oldState.players.length,
+    //   players: [...oldState.players.slice(),],
+    // }));
   };
 
   render() {
@@ -55,6 +63,7 @@ class GetTo100 extends Component {
             onGameCompletion={this.handleGameCompletion}
             setActivePlayerIndex={this.setActivePlayerIndex}
             score={this.state.players[this.state.activePlayerIndex].score}
+            steps={this.state.steps}
           />
         </div>
       </div>
