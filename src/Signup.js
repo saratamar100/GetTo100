@@ -1,20 +1,22 @@
 import React, { Component } from "react";
 import "./SignUp.css";
-import CartIcon from '../src/media/kubiya.jpg';
+import CartIcon from "../src/media/kubiya.jpg";
 
 class Signup extends Component {
   constructor(props) {
     super(props);
-
+    let users = [];
+    let usersJson = localStorage.getItem("users100");
+    if (usersJson) {
+      users = JSON.parse(usersJson);
+    } else {
+      localStorage.setItem("users100", JSON.stringify([]));
+    }
     this.state = {
       username: "",
       password: "",
       confirmPassword: "",
-      users: [
-        { username: "user1", password: "password1" },
-        { username: "user2", password: "password2" },
-        { username: "user3", password: "password3" },
-      ],
+      users,
       error: "",
     };
   }
@@ -60,6 +62,7 @@ class Signup extends Component {
       password: "",
       confirmPassword: "",
     });
+    localStorage.setItem("users100", JSON.stringify(this.state.users));
   };
 
   render() {
@@ -68,8 +71,8 @@ class Signup extends Component {
     return (
       <div className="class_SignUp">
         <h1 className="Header">Sign Up</h1>
-        <img className="kubiyaR" src={CartIcon}/>
-        <img className="kubiyaL" src={CartIcon}/>
+        <img className="kubiyaR" src={CartIcon} />
+        <img className="kubiyaL" src={CartIcon} />
         <form onSubmit={this.handleSignup}>
           <div className="flex">
             <div className="class_username">
@@ -103,7 +106,9 @@ class Signup extends Component {
               />
             </div>
           </div>
-          <button className="submit" type="submit">Sign Up</button>
+          <button className="submit" type="submit">
+            Sign Up
+          </button>
           <div>{error}</div>
           <button onClick={this.props.login}>Log In</button>
         </form>
