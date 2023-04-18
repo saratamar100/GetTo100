@@ -6,9 +6,12 @@ class Player extends Component {
 
   render() {
     const { name, gamesPlayed, bestScore, score, active } = this.props;
-
+    let style = {};
+    if (active) {
+      style = { backgroundColor: "yellow" };
+    }
     return (
-      <li style={{ backgroundColor: "yellow" }}>
+      <li style={style}>
         <span>
           {name} - Games Played: {gamesPlayed} - Best Score: {bestScore}
         </span>
