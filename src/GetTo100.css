@@ -64,27 +64,25 @@
 
 .game .actions button {
     margin-right: 10px;
-    font-size: 24px;
+    font-size: 50px;
     font-weight: bold;
+    padding: 30px;
 }
 
 .game .info {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
+    justify-content: space-between; */
+    /* align-items: center; */
+    margin-top: 10px;
     font-size: 18px;
+    margin-bottom: 100px;
 }
 
 .game .info .active-player {
     font-weight: bold;
     font-size: 1cm ;
     text-align: center;
-}
-
-.game .info .actions-taken {
-    align-items: center;
 }
 
 .player-list {
@@ -101,9 +99,11 @@
 }
 
 .active-player {
-    margin-right: 10%;
-    margin-left: 40%;
-    margin-bottom: 20%;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 10px;
+    
 }
 
 .score {
@@ -114,7 +114,7 @@
 }
 
 .game .score {
-    font-size: 48px;
+    font-size: 120px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
@@ -124,6 +124,13 @@
     margin-top: 0; 
 }
   
+.game .actions{
+    margin-right: 38%;
+    margin-left: 40%;
+    margin-bottom: 20%;
+    size: 100px;
+
+}
 
 .actions{
     margin-right: 38%;
@@ -132,5 +139,7 @@
     size: 50px;
 }
 
-
+ul {
+    list-style-position: inside;
+}
   
