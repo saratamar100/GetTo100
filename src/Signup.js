@@ -56,13 +56,17 @@ class Signup extends Component {
       password: password,
     };
 
-    this.setState({
-      users: [...users, newUser],
-      username: "",
-      password: "",
-      confirmPassword: "",
+    console.log(this.state);
+    this.setState((oldState) => {
+      localStorage.setItem("users100", JSON.stringify([...oldState.users, newUser]));
+      return {
+        users: [...oldState.users, newUser],
+        username: "",
+        password: "",
+        confirmPassword: "",
+      };
     });
-    localStorage.setItem("users100", JSON.stringify(this.state.users));
+    
   };
 
   render() {
