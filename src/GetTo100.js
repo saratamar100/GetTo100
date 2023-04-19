@@ -26,31 +26,26 @@ class GetTo100 extends Component {
     };
   }
 
-  handleGameCompletion = (playerIndex) => {
-    //Father Function
-    const { players, activePlayerIndex } = this.state;
-    const player = players[playerIndex];
-    //player.gamesPlayed += 1;
-    // if (!player.bestScore || score < player.bestScore) {
-    //   player.bestScore = score;
-    // }3
-    this.setActivePlayerIndex();
-
-    this.setState({ players });
-  };
-
   setActivePlayerIndex = (newScore) => {
-    const { players, activePlayerIndex } = this.state;
-    players[activePlayerIndex].score = newScore;
-    const nextActivePlayerIndex = (activePlayerIndex + 1) % players.length;
-    if (nextActivePlayerIndex === 0) {
-      this.setState((oldState) => ({ steps: oldState.steps + 1 })); ////////////
-    }
-    this.setState({ activePlayerIndex: nextActivePlayerIndex, players }); ///////////////event!!
-    // this.setState((oldState) => ({
-    //   activePlayerIndex: (oldState.activePlayerIndex + 1) % oldState.players.length,
-    //   players: [...oldState.players.slice(),],
-    // }));
+    // const { players, activePlayerIndex } = this.state;
+    // players[activePlayerIndex].score = newScore;
+    // const nextActivePlayerIndex = (activePlayerIndex + 1) % players.length;
+    // if (nextActivePlayerIndex === 0) {
+    //   this.setState((oldState) => ({ steps: oldState.steps + 1 })); ////////////
+    // }
+    // this.setState({ activePlayerIndex: nextActivePlayerIndex, players }); ///////////////event!!
+
+    this.setState((oldState) => {
+      const { activePlayerIndex } = oldState;
+      const players = JSON.parse(JSON.stringify(oldState.players));
+      players[activePlayerIndex].score = newScore;
+      const nextActivePlayerIndex = (activePlayerIndex + 1) % players.length;
+      let s = oldState.steps;
+      if (nextActivePlayerIndex === 0) {
+        s = oldState.steps;
+      }
+      return { activePlayerIndex: nextActivePlayerIndex, players, steps: s };
+    });
   };
 
   handleWinnig = (winner, steps) => {
@@ -77,7 +72,6 @@ class GetTo100 extends Component {
           "\nDo you want to play again?"
       ) == true
     ) {
-      //this.props.c
       this.props.playAgain();
     } else {
       this.props.endGame();
@@ -98,7 +92,6 @@ class GetTo100 extends Component {
           <Game
             players={players}
             activePlayerIndex={activePlayerIndex}
-            onGameCompletion={this.handleGameCompletion}
             setActivePlayerIndex={this.setActivePlayerIndex}
             score={this.state.players[this.state.activePlayerIndex].score}
             steps={this.state.steps}

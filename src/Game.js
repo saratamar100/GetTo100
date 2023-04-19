@@ -3,10 +3,9 @@ import CartIcon from '../src/media/kubiya.jpg';
 
 
 class Game extends Component {
-  handleGameCompletion = () => {
-    //Son Function
+  handleGameCompletion = () => {//Son Function
     const { players, activePlayerIndex, onGameCompletion } = this.props;
-    onGameCompletion(activePlayerIndex); //, this.state.actions.length);
+    //onGameCompletion(); //, this.state.actions.length);
     //const nextActivePlayerIndex = (activePlayerIndex + 1) % players.length;
     // this.setState({
     //   score: Math.floor(Math.random() * 100),
@@ -20,9 +19,6 @@ class Game extends Component {
 
   handleAction = (action) => {
     const {
-      players,
-      activePlayerIndex,
-      onGameCompletion,
       setActivePlayerIndex,
       score,
     } = this.props;
@@ -47,7 +43,6 @@ class Game extends Component {
 
     if (newScore === 100) {
       this.handleGameCompletion();
-      //onGameCompletion(activePlayerIndex);
     } else {
       setActivePlayerIndex(newScore);
     }
