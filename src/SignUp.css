@@ -62,16 +62,20 @@
 .class_username{
     text-align: center;
     flex: 1;
+    font-weight: bold;
   }
   
   .class_password{
     text-align: center;
     flex: 1;
+    font-weight: bold;
+    
   }
   
   .class_confirmPassword{
     text-align: center;
     flex: 1;
+    font-weight: bold;
   }
   
   .submit{
@@ -120,9 +124,16 @@ form li label {
 form li input,
 textarea {
     flex: 1;
+    font-size: 25px;
 }
 
 .list{
 bottom: 100px;
+}
+
+.input{
+  font-size: 100px;
+  text-size-adjust: 50px;
+
 }
 

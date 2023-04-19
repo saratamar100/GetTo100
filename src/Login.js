@@ -86,7 +86,7 @@ class Login extends Component {
           <form className="form_login" onSubmit={this.handleLogin}>
             <h5>Please enter the username and password of each player: </h5>
             <div>
-              <label htmlFor="username">Username</label>
+              <label className="lable_username" htmlFor="username">Username</label>
               <input
                 type="text"
                 id="username"
@@ -96,7 +96,7 @@ class Login extends Component {
               />
             </div>
             <div>
-              <label htmlFor="password">Password</label>
+              <label className="lable_password" htmlFor="password">Password</label>
               <input
                 type="password"
                 id="password"

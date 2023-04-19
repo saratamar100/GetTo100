@@ -15,9 +15,9 @@ class Player extends Component {
         <span className="player_score">
           {name}:  {score}
         </span>
-        <h5>
+        <h3>
           Games' player: {this.props.games.join()}
-        </h5>
+        </h3>
       </li>
     );
   }

@@ -94,3 +94,29 @@ button{
   border-radius: 8%;
   background-color: rgb(235, 247, 144);
 }
+
+.lable_username{
+  font-weight: bold;
+}
+
+.lable_password{
+  font-weight: bold;
+}
+
+.lable_username input,
+textarea {
+    flex: 1;
+    font-size: 25px;
+    size: 30px;
+
+}
+
+.input{
+  font-size: 100px;
+  text-size-adjust: 50px;
+
+}
+
+.lable_username input{
+  size: 30px;
+}
