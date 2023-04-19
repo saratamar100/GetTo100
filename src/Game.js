@@ -70,8 +70,8 @@ class Game extends Component {
         </div>
         <div className="info" >
           <div className="active-player">{activePlayer.name}'s turn</div>
+          <p className="steps">{this.props.steps} steps</p>
         </div>
-        <p>{this.props.steps} steps</p>
       </div>
     );
   }
