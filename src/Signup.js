@@ -33,7 +33,8 @@ class Signup extends Component {
   handleSignup = (event) => {
     event.preventDefault();
 
-    const { username, password, confirmPassword, users } = this.state;
+    const { password, confirmPassword, users } = this.state;
+    let username = this.state.username.trim();
 
     if (password !== confirmPassword) {
       this.setState({

@@ -53,7 +53,7 @@ class GetTo100 extends Component {
     // }));
   };
 
-  handleWinnig = (winner) => {
+  handleWinnig = (winner, steps) => {
     let users = [];
     let usersJson = localStorage.getItem("users100");
     if (usersJson) {
@@ -67,7 +67,16 @@ class GetTo100 extends Component {
       users[userIndex].games.push(this.state.steps);
     }
     localStorage.setItem("users100", JSON.stringify(users));
-    if (window.confirm("Press a button!") == true) {
+    if (
+      window.confirm(
+        winner +
+          " won!!!!:)" +
+          " with " +
+          steps +
+          " steps." +
+          "\nDo you want to play again?"
+      ) == true
+    ) {
       //this.props.c
       this.props.playAgain();
     } else {
