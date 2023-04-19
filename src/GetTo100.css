@@ -150,3 +150,21 @@ ul {
     list-style-position: inside;
 }
   
+.player_score{
+    margin-top: 5%;
+    font-weight: bold;
+    font-size: 0.8cm ;
+    text-align: center;
+}
+
+
+.class_active{
+    border: 3px solid black;
+
+    color: rgb(6, 6, 5);
+    /* box-shadow: 10px 10px 50px #ccc; */
+    border-radius: 15%;
+    background-color: rgb(235, 247, 144);
+}
+
+

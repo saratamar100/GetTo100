@@ -122,10 +122,10 @@ class Login extends Component {
           </div>
         </div>
         <div>
-          <button onClick={this.handleLoginAll}>enter</button>
+          <button onClick={this.handleLoginAll}>Enter</button>
         </div>
         <div>
-          <button onClick={this.props.signup}>sign up</button>
+          <button onClick={this.props.signup}>Sign Up</button>
         </div>
       </div>
     );

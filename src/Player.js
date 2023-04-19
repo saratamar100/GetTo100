@@ -6,17 +6,18 @@ class Player extends Component {
 
   render() {
     const { name, score, active } = this.props;
-    let style = {};
+    let class_active = "";
     if (active) {
-      style = { backgroundColor: "yellow" };
+      class_active = "class_active";
     }
     return (
-      <li style={style}>
-        <span>
-          {name} - 
+      <li className={class_active}>
+        <span className="player_score">
+          {name}:  {score}
         </span>
-        <h5 style={{display:"inline"}}>{score}</h5>
-        <h2>Games' player: {this.props.games.join()}</h2>
+        <h5>
+          Games' player: {this.props.games.join()}
+        </h5>
       </li>
     );
   }
