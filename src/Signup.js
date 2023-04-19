@@ -80,8 +80,9 @@ class Signup extends Component {
         <img className="kubiyaR" src={CartIcon} />
         <img className="kubiyaL" src={CartIcon} />
         <form onSubmit={this.handleSignup}>
-          <div className="flex">
-            <div className="class_username">
+          <h5>Please create a new username and password: </h5>
+          <ul className="list">
+            <li className="class_username">
               <label htmlFor="username">Username</label>
               <input
                 type="text"
@@ -90,8 +91,8 @@ class Signup extends Component {
                 value={username}
                 onChange={this.handleInputChange}
               />
-            </div>
-            <div className="class_password">
+            </li>
+            <li className="class_password">
               <label htmlFor="password">Password</label>
               <input
                 type="password"
@@ -100,8 +101,8 @@ class Signup extends Component {
                 value={password}
                 onChange={this.handleInputChange}
               />
-            </div>
-            <div className="class_confirmPassword">
+            </li>
+            <li className="class_confirmPassword">
               <label htmlFor="confirmPassword">Confirm Password</label>
               <input
                 type="password"
@@ -110,8 +111,8 @@ class Signup extends Component {
                 value={confirmPassword}
                 onChange={this.handleInputChange}
               />
-            </div>
-          </div>
+            </li>
+          </ul>
           <button className="submit" type="submit">
             Sign Up
           </button>
