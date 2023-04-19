@@ -66,7 +66,7 @@ class Login extends Component {
   handleLoginAll = () => {
     const num = this.props.loggedInUsers.length;
     if (num < 2 || num > 4) {
-      alert("erorrrrrrrrrrr");
+      alert("Please enter between 2 and 4 players");
     } else {
       this.props.login();
     }
