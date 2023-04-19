@@ -33,7 +33,7 @@ class Login extends Component {
   handleLogin = (event) => {
     event.preventDefault();
 
-    const {  password, users } = this.state;
+    const { password, users } = this.state;
     let username = this.state.username.trim();
     const { loggedInUsers } = this.props;
     const user = users.find((user) => user.username === username);
@@ -84,6 +84,7 @@ class Login extends Component {
         <img className="kubiyaL" src={CartIcon} />
         <div className="flex_continer">
           <form className="form_login" onSubmit={this.handleLogin}>
+            <h5>Please enter the username and password of each player: </h5>
             <div>
               <label htmlFor="username">Username</label>
               <input
@@ -104,15 +105,15 @@ class Login extends Component {
                 onChange={this.handleInputChange}
               />
             </div>
-            <button type="submit">Login</button>
+            <button className="button_login" type="submit">Login</button>
             <div>{error}</div>
           </form>
           <div className="Logged_in_users">
-            <h2>Logged in users:</h2>
+            <h4>Logged in users:</h4>
             <ul>
               {loggedInUsers.map((username) => (
                 <li key={username}>
-                  {username}
+                  {username} {" "}
                   <button onClick={() => this.handleLogout(username)}>
                     Logout
                   </button>
@@ -121,11 +122,9 @@ class Login extends Component {
             </ul>
           </div>
         </div>
-        <div>
-          <button onClick={this.handleLoginAll}>Enter</button>
-        </div>
-        <div>
-          <button onClick={this.props.signup}>Sign Up</button>
+        <div className="buttons_flex_contiener">
+          <button className="button_enter" onClick={this.handleLoginAll}>Enter</button>
+          <button className="button_sign_up" onClick={this.props.signup}>Sign Up</button>
         </div>
       </div>
     );

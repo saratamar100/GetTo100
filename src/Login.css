@@ -50,6 +50,26 @@
     flex: 1;
 }
 
+.button_login{
+  margin-top: 10%;
+}
+
+.buttons_flex_contiener{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button_enter{
+  flex: 1;
+  
+}
+
+.button_sign_up{
+  flex: 1;
+  
+}
+
 .Logged_in_users{
     flex: 1;
 }
@@ -63,3 +83,13 @@
     bottom: 70px;
 }
   
+button{
+  margin-right: 10px;
+  font-size:20px;
+  font-weight: bold;
+  padding: 10px;
+  color: rgb(6, 6, 5);
+  /* box-shadow: 10px 10px 50px #ccc; */
+  border-radius: 8%;
+  background-color: rgb(235, 247, 144);
+}
