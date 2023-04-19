@@ -33,7 +33,8 @@ class Login extends Component {
   handleLogin = (event) => {
     event.preventDefault();
 
-    const { username, password, users } = this.state;
+    const {  password, users } = this.state;
+    let username = this.state.username.trim();
     const { loggedInUsers } = this.props;
     const user = users.find((user) => user.username === username);
 
