@@ -67,6 +67,12 @@ class GetTo100 extends Component {
       users[userIndex].games.push(this.state.steps);
     }
     localStorage.setItem("users100", JSON.stringify(users));
+    if (window.confirm("Press a button!") == true) {
+      //this.props.c
+      this.props.playAgain();
+    } else {
+      this.props.endGame();
+    }
   };
 
   render() {

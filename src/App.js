@@ -31,7 +31,14 @@ class App extends Component {
     } else if (this.state.page === "signup") {
       return <Signup login={() => this.handleChangePage("login")} />;
     } else if (this.state.page === "game") {
-      return <GetTo100 users={this.state.loggedInUsers} />;
+      return (
+        <GetTo100
+          key={Date.now()}
+          users={this.state.loggedInUsers}
+          playAgain={() => this.handleChangePage("game")}
+          endGame={() => this.handleChangePage("login")}
+        />
+      );
     }
     return null;
   }

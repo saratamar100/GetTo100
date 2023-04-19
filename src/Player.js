@@ -13,7 +13,7 @@ class Player extends Component {
     return (
       <li style={style}>
         <span>
-          {name} -j
+          {name} - 
         </span>
         <h5 style={{display:"inline"}}>{score}</h5>
         <h2>{this.props.games.join()}</h2>
