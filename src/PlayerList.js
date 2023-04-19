@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import Player from "./Player";
 class PlayerList extends Component {
-  //   handleLeaveSystem = (playerIndex) => {
-  //     this.props.onLeaveSystem(playerIndex);
-  //   };
 
   render() {
     const { players } = this.props;

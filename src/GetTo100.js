@@ -27,14 +27,6 @@ class GetTo100 extends Component {
   }
 
   setActivePlayerIndex = (newScore) => {
-    // const { players, activePlayerIndex } = this.state;
-    // players[activePlayerIndex].score = newScore;
-    // const nextActivePlayerIndex = (activePlayerIndex + 1) % players.length;
-    // if (nextActivePlayerIndex === 0) {
-    //   this.setState((oldState) => ({ steps: oldState.steps + 1 })); ////////////
-    // }
-    // this.setState({ activePlayerIndex: nextActivePlayerIndex, players }); ///////////////event!!
-
     this.setState((oldState) => {
       const { activePlayerIndex } = oldState;
       const players = JSON.parse(JSON.stringify(oldState.players));

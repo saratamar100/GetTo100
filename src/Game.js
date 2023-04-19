@@ -1,27 +1,15 @@
 import React, { Component } from "react";
-import CartIcon from '../src/media/kubiya.jpg';
-
+import CartIcon from "../src/media/kubiya.jpg";
 
 class Game extends Component {
-  handleGameCompletion = () => {//Son Function
-    const { players, activePlayerIndex, onGameCompletion } = this.props;
-    //onGameCompletion(); //, this.state.actions.length);
-    //const nextActivePlayerIndex = (activePlayerIndex + 1) % players.length;
-    // this.setState({
-    //   score: Math.floor(Math.random() * 100),
-    //   actions: [],
-    // });
-    //this.props.setActivePlayerIndex(nextActivePlayerIndex);
-
-    //alert(players[activePlayerIndex].name + " won!!!!:)"+" with "+this.props.steps);
-    this.props.winnig(players[activePlayerIndex].name,this.props.steps);
+  handleGameCompletion = () => {
+    //Son Function
+    const { players, activePlayerIndex } = this.props;
+    this.props.winnig(players[activePlayerIndex].name, this.props.steps);
   };
 
   handleAction = (action) => {
-    const {
-      setActivePlayerIndex,
-      score,
-    } = this.props;
+    const { setActivePlayerIndex, score } = this.props;
 
     let newScore;
     switch (action) {
@@ -54,8 +42,8 @@ class Game extends Component {
 
     return (
       <div className="game">
-        <img className="kubiyaR" src={CartIcon}/>
-        <img className="kubiyaL" src={CartIcon}/>
+        <img className="kubiyaR" src={CartIcon} />
+        <img className="kubiyaL" src={CartIcon} />
         <div className="score">{this.props.score}</div>
         <div className="actions">
           <button onClick={() => this.handleAction("+1")}>+1</button>
@@ -63,7 +51,7 @@ class Game extends Component {
           <button onClick={() => this.handleAction("*2")}>*2</button>
           <button onClick={() => this.handleAction("/2")}>/2</button>
         </div>
-        <div className="info" >
+        <div className="info">
           <div className="active-player">{activePlayer.name}'s turn</div>
           <p className="steps">{this.props.steps} steps</p>
         </div>
