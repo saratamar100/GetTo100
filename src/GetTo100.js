@@ -34,7 +34,7 @@ class GetTo100 extends Component {
       const nextActivePlayerIndex = (activePlayerIndex + 1) % players.length;
       let s = oldState.steps;
       if (nextActivePlayerIndex === 0) {
-        s = oldState.steps;
+        s = oldState.steps + 1;
       }
       return { activePlayerIndex: nextActivePlayerIndex, players, steps: s };
     });
