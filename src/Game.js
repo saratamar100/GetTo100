@@ -14,8 +14,8 @@ class Game extends Component {
     // });
     //this.props.setActivePlayerIndex(nextActivePlayerIndex);
 
-    alert(players[activePlayerIndex].name + " won!!!!:)"+" with "+this.props.steps);
-    this.props.winnig(players[activePlayerIndex].name);
+    //alert(players[activePlayerIndex].name + " won!!!!:)"+" with "+this.props.steps);
+    this.props.winnig(players[activePlayerIndex].name,this.props.steps);
   };
 
   handleAction = (action) => {
