@@ -64,9 +64,17 @@
 
 .game .actions button {
     margin-right: 10px;
-    font-size: 50px;
+    font-size:50px;
     font-weight: bold;
     padding: 30px;
+    color: rgb(6, 6, 5);
+    box-shadow: 10px 10px 50px #ccc;
+    border-radius: 20%;
+    background-color: rgb(235, 247, 144);
+    /* box-sizing: border-box;
+    height: 4cm;
+    width: 4cm;
+     */
 }
 
 .game .info {
