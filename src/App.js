@@ -18,10 +18,10 @@ class App extends Component {
   handleChangeUsers = (loggedInUsers) => {
     this.setState({ loggedInUsers });
   };
-  handleEndGame=()=>{
+  handleEndGame = () => {
     this.handleChangeUsers([]);
     this.handleChangePage("login");
-  }
+  };
   render() {
     if (this.state.page === "login") {
       return (
