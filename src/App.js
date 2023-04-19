@@ -18,6 +18,10 @@ class App extends Component {
   handleChangeUsers = (loggedInUsers) => {
     this.setState({ loggedInUsers });
   };
+  handleEndGame=()=>{
+    this.handleChangeUsers([]);
+    this.handleChangePage("login");
+  }
   render() {
     if (this.state.page === "login") {
       return (
@@ -36,7 +40,7 @@ class App extends Component {
           key={Date.now()}
           users={this.state.loggedInUsers}
           playAgain={() => this.handleChangePage("game")}
-          endGame={() => this.handleChangePage("login")}
+          endGame={this.handleEndGame}
         />
       );
     }
