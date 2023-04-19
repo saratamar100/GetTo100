@@ -18,6 +18,7 @@ class PlayerList extends Component {
               name={player.name}
               score={player.score}
               active={index == this.props.activePlayerIndex}
+              games={player.games}
               //   onLeaveSystem={() => this.handleLeaveSystem(index)}
             />
           ))}

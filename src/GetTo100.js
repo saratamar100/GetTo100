@@ -7,10 +7,19 @@ class GetTo100 extends Component {
   constructor(props) {
     super(props);
 
+    let users = [];
+    let usersJson = localStorage.getItem("users100");
+    if (usersJson) {
+      users = JSON.parse(usersJson);
+    } else {
+      localStorage.setItem("users100", JSON.stringify([]));
+    }
+    console.log(users);
     this.state = {
       players: this.props.users.map((user) => ({
         name: user,
         score: Math.floor(Math.random() * 99) + 1,
+        games: users.find((u) => u.username === user).games,
       })),
       activePlayerIndex: 0,
       steps: 1,
@@ -52,7 +61,6 @@ class GetTo100 extends Component {
     } else {
       localStorage.setItem("users100", JSON.stringify([]));
     }
-    console.log(users);
     const userIndex = users.findIndex((user) => user.username === winner);
 
     if (userIndex > -1) {
