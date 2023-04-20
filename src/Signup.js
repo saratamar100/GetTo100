@@ -64,6 +64,7 @@ class Signup extends Component {
         username: "",
         password: "",
         confirmPassword: "",
+        error: "You have successfully registered!",
       }),
       () => {
         localStorage.setItem("users100", JSON.stringify(this.state.users));
