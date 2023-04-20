@@ -43,6 +43,19 @@ class Signup extends Component {
       return;
     }
 
+    if (username.length < 5) {
+      this.setState({
+        error: "Enter a username of at least 5 characters",
+      });
+      return;
+    }
+    if (password.length < 5) {
+      this.setState({
+        error: "Enter a password of at least 5 characters",
+      });
+      return;
+    }
+
     const userExists = users.find((user) => user.username === username);
 
     if (userExists) {
